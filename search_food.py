@@ -33,8 +33,9 @@ def search_food():
     return jsonify({'message': 'Food not found'})
 
 # food search random for first page of search food
-@app.route('/food-search')
+@app.route('/food-search-menu')
 def search_food():
+    # randomize search
     foods = ['sapi', 'daging', 'ayam', 'susu', 'nasi']
     query = random.choice(foods)
     foods = fs.foods_search(query)
