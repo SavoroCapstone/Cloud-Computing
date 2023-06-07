@@ -1,0 +1,10 @@
+express
+firebase-admin
+nodemon
+firebase
+firebase admin
+cors
+-g nodemon
+firebase-admin express body-parser
+fatsecret
+flask
