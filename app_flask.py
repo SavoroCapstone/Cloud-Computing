@@ -47,7 +47,7 @@ def food_details():
 
 # food search on searchbar menu /food-search?query=<food_name>
 @app.route('/food-search')
-def search_food():
+def search_food_menu():
     query = request.args.get('query')
     foods = fs.foods_search(query)
     
