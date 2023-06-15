@@ -198,8 +198,27 @@ def recommend_food(food_name):
     most_similar_indices = np.argsort(query_item_similarities)[-26:-1]  # Get top 25 most similar food indices
     recommended_foods = np.unique(food_names[most_similar_indices])
     
+    # list of recommendation dict
+    recommendations = []
+    for food in recommended_foods:
+        food_id = df[df['nama'] == food]['UniqueID'].values[0]
+        calories = df[df['nama'] == food]['kalori'].values[0]
+        carbs = df[df['nama'] == food]['karbs'].values[0]
+        fat = df[df['nama'] == food]['lemak'].values[0]
+        protein = df[df['nama'] == food]['protein'].values[0]
+        
+        recommendation = {
+            'food_id': str(food_id),
+            'food_name': food,
+            'calories': calories,
+            'carbs': carbs,
+            'fat': fat,
+            'protein': protein
+        }
+        recommendations.append(recommendation)
+
     # Return recommendations as JSON
-    return jsonify({'recommendations': recommended_foods.tolist()})
+    return jsonify(recommendations)
 
 @app.route('/prediction/<seed_text>')
 def get_predictions(seed_text):
