@@ -1,0 +1,13 @@
+firebase-admin==6.1.0
+fatsecret==0.4.0
+flask==2.3.2
+gunicorn==20.1.0
+keras==2.12.0
+jsonify==0.5
+numpy==1.23.5
+pandas==2.0.2
+scikit-learn==1.2.2
+rauth==0.7.3
+tensorflow-io-gcs-filesystem==0.31.0
+tensorflow==2.12.0
+
